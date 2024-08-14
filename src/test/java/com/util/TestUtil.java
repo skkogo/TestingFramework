@@ -7,8 +7,18 @@ import com.pojo_2.CustomerAdressPOJO;
 import com.pojo_2.CustomerPOJO;
 import com.pojo_2.CustomerProductPOJO;
 import com.pojo_2.ProblemsPOJO;
+import com.pojo_3.Bookingdates;
+import com.pojo_3.CreateBooking;
 
 public class TestUtil {
+	public static CreateBooking getFakerCreateBooking() {
+		Faker faker= new Faker();
+				Bookingdates bookingdates = new Bookingdates("18-09-2024", "21-09-2024");
+		CreateBooking createBooking = new CreateBooking(faker.name().firstName(), faker.name().lastName(), 10000, true, "Breakfast", bookingdates);
+	return createBooking;
+	}
+	
+	
 
 	public static CreateJobPOJO getFakeCreateJOb() {
 		Faker faker = new Faker();
