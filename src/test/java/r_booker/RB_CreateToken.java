@@ -2,6 +2,8 @@ package r_booker;
 
 import static io.restassured.RestAssured.*;
 
+import java.io.IOException;
+
 import com.pojo_3.CreateToken;
 
 import static com.util.TestUtil.*;
@@ -12,8 +14,8 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
 class RB_CreateToken {
-	public static void main(String[] args) {
-		baseURI = "https://restful-booker.herokuapp.com";
+	public static void main(String[] args) throws IOException {
+		baseURI =getqaProperties("qa.properties", "BASE_URL");
 		Response response = given()
 				.header(new Header("Content-Type", "application/json"))
 				.body(convertPOJOtoJSON(new CreateToken("admin", "password123")))
