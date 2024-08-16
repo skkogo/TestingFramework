@@ -16,6 +16,13 @@ import com.pojo_3.Bookingdates;
 import com.pojo_3.CreateBooking;
 
 public class TestUtil {
+//POJO to JSON
+	public static String convertPOJOtoJSON(Object data) {
+		Gson gson = new Gson();
+		String gData = gson.toJson(data);
+		return gData;
+	}
+// properties file reader
 	public static String getqaProperties(String propertiesFileName, String key) throws IOException {
 		File myfile = new File(System.getProperty("user.dir") + "\\config\\" + propertiesFileName);
 		FileReader fileReader = new FileReader(myfile);
@@ -24,16 +31,19 @@ public class TestUtil {
 		String value = properties.getProperty(key);
 		return value;
 	}
+	
 
-	public static CreateBooking getFakerCreateBooking() {
+	//fake Create booking
+	public static CreateBooking getFakeCreateBooking() {
 		Faker faker = new Faker();
 		Bookingdates bookingdates = new Bookingdates("18-09-2024", "21-09-2024");
+
 		CreateBooking createBooking = new CreateBooking(faker.name().firstName(), faker.name().lastName(), 10000, true,
 				"Breakfast", bookingdates);
 		return createBooking;
 	}
-
-	public static String getFakeCreateJOb() {
+//fake ceate job 
+	public static CreateJobPOJO getFakeCreateJOb() {
 		Faker faker = new Faker();
 		ProblemsPOJO[] Problem = new ProblemsPOJO[3];
 		Problem[0] = new ProblemsPOJO(1, "Overheating");
@@ -49,13 +59,7 @@ public class TestUtil {
 				faker.numerify("##########"), faker.numerify("##########"), faker.internet().emailAddress(),
 				faker.internet().emailAddress());
 		CreateJobPOJO CreateJob = new CreateJobPOJO(65, 655, 556, 3455, Customer, Adress, Product, Problem);
-		return convertPOJOtoJSON(CreateJob);
-	}
-
-	public static String convertPOJOtoJSON(Object data) {
-		Gson gson = new Gson();
-		String gData = gson.toJson(data);
-		return gData;
+		return CreateJob;
 	}
 
 }

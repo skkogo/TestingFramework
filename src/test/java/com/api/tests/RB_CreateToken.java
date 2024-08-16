@@ -1,4 +1,4 @@
-package r_booker;
+package com.api.tests;
 
 import static io.restassured.RestAssured.*;
 
@@ -19,6 +19,7 @@ class RB_CreateToken {
 		Response response = given()
 				.header(new Header("Content-Type", "application/json"))
 				.body(convertPOJOtoJSON(new CreateToken("admin", "password123")))
+				.log().all()
 				.post("auth");
 
 		System.out.println(response.asPrettyString());
