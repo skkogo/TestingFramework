@@ -14,7 +14,7 @@ import io.restassured.http.Header;
 
 import static com.util.TestUtil.*;
 
-public class CreateTokenTest {
+public class TestCreateToken {
 	@BeforeMethod(description = "setting up the BaseURL for API using properties file")
 	public void setup() throws IOException {
 		baseURI= getqaProperties("qa.properties", "BASE_URL");
