@@ -6,6 +6,7 @@ import java.io.IOException;
 
 import org.hamcrest.Matchers;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 import com.pojo_3.CreateToken;
 
@@ -18,6 +19,8 @@ public class CreateTokenTest {
 	public void setup() throws IOException {
 		baseURI= getqaProperties("qa.properties", "BASE_URL");
 	}
+	
+	@Test(description = "verify that token has been created after run this API", groups = {"e2e", "smoke","sanity"})
 	public void test_create_token_API() {
 		given()
 			.header(new Header("Content-Type", "application/json"))
