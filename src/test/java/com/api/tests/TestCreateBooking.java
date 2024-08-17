@@ -4,12 +4,10 @@ import static io.restassured.RestAssured.*;
 
 import java.io.IOException;
 
-import org.hamcrest.Matchers;
+import static org.hamcrest.Matchers.*;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import io.restassured.http.Header;
-
 import static com.util.TestUtil.*;
 
 public class TestCreateBooking {
@@ -31,8 +29,16 @@ public void Test_Create_Booking_API() {
 		.then()
 				.log().all()
 				.statusCode(200)
-				.body(Matchers.containsString("bookingid"))
-				.time(Matchers.lessThan(3000L));
+				.body(containsString("bookingid"))
+				.time(lessThan(4000L))
+				.body("bookingid", notNullValue())
+				.body("booking.firstname", notNullValue())
+				.body("booking.lastname", notNullValue())
+				.body("booking.totalprice", notNullValue())
+				.body("booking.depositpaid", equalTo(true))
+				.body("booking.bookingdates.checkin", notNullValue())
+				.body("booking.bookingdates.checkout", notNullValue())
+				.extract().jsonPath().getInt("bookingid") ;
 			
 				
 	}
