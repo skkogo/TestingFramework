@@ -39,7 +39,7 @@ public class TestUtil {
 		Bookingdates bookingdates = new Bookingdates("18-09-2024", "21-09-2024");
 
 		CreateBooking createBooking = new CreateBooking(faker.name().firstName(), faker.name().lastName(), 10000, true,
-				"Breakfast", bookingdates);
+				 bookingdates,"Breakfast");
 		return createBooking;
 	}
 //fake ceate job 
