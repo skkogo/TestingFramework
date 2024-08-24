@@ -2,7 +2,7 @@ package com.api.tests;
 
 import static io.restassured.RestAssured.*;
 
-import com.pojo_3.CreateBooking;
+import com.pojo_3.CreateBookingPOJO;
 
 import static com.util.TestUtil.*;
 

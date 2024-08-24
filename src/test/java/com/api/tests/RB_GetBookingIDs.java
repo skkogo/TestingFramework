@@ -19,8 +19,7 @@ class RB_GetBookingIDs {
 		Response response = given()
 				.header(new Header("Accept", "application/json"))
 				.log().all()
-				.get("booking/2130");
-
+				.get("booking/2231");
 		System.out.println(response.asPrettyString());
 		System.out.println(response.statusCode());
 		

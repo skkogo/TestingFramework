@@ -1,9 +1,9 @@
 package com.pojo_3;
 
-public class CreateToken {
+public class CreateTokenPOJO {
 	private String username ; 
   private String  password ;
-public CreateToken(String username, String password) {
+public CreateTokenPOJO(String username, String password) {
 	super();
 	this.username = username;
 	this.password = password;

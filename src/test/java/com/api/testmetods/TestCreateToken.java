@@ -1,4 +1,4 @@
-package com.api.tests;
+package com.api.testmetods;
 
 import static io.restassured.RestAssured.*;
 
@@ -8,7 +8,7 @@ import org.hamcrest.Matchers;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import com.pojo_3.CreateToken;
+import com.pojo_3.CreateTokenPOJO;
 
 import io.restassured.http.Header;
 
@@ -24,7 +24,7 @@ public class TestCreateToken {
 	public void test_create_token_API() {
 		given()
 			.header(new Header("Content-Type", "application/json"))
-			.body(convertPOJOtoJSON( new CreateToken("admin", "password123")))
+			.body(convertPOJOtoJSON( new CreateTokenPOJO("admin", "password123")))
 		.when()
 			.log().all()
 			.post("auth")

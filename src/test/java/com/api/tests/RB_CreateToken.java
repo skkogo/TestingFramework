@@ -4,7 +4,7 @@ import static io.restassured.RestAssured.*;
 
 import java.io.IOException;
 
-import com.pojo_3.CreateToken;
+import com.pojo_3.CreateTokenPOJO;
 
 import static com.util.TestUtil.*;
 
@@ -18,7 +18,7 @@ class RB_CreateToken {
 		baseURI =getqaProperties("qa.properties", "BASE_URL");
 		Response response = given()
 				.header(new Header("Content-Type", "application/json"))
-				.body(convertPOJOtoJSON(new CreateToken("admin", "password123")))
+				.body(convertPOJOtoJSON(new CreateTokenPOJO("admin", "password123")))
 				.log().all()
 				.post("auth");
 

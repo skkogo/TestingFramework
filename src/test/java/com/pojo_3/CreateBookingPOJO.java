@@ -1,14 +1,14 @@
 package com.pojo_3;
 
-public class CreateBooking {
+public class CreateBookingPOJO {
 	private String firstname;
 	private String lastname;
 	private int totalprice;
 	private boolean depositpaid;
-	private Bookingdates bookingdates;
+	private BookingdatesPOJO bookingdates;
 	private String additionalneeds;
-	public CreateBooking(String firstname, String lastname, int totalprice, boolean depositpaid,
-			Bookingdates bookingdates, String additionalneeds) {
+	public CreateBookingPOJO(String firstname, String lastname, int totalprice, boolean depositpaid,
+			BookingdatesPOJO bookingdates, String additionalneeds) {
 		super();
 		this.firstname = firstname;
 		this.lastname = lastname;

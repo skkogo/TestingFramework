@@ -12,16 +12,22 @@ import com.pojo_2.CustomerAdressPOJO;
 import com.pojo_2.CustomerPOJO;
 import com.pojo_2.CustomerProductPOJO;
 import com.pojo_2.ProblemsPOJO;
-import com.pojo_3.Bookingdates;
-import com.pojo_3.CreateBooking;
+import com.pojo_3.BookingdatesPOJO;
+import com.pojo_3.CreateBookingPOJO;
+import com.pojo_3.PartialBookingPOJO;
 
 public class TestUtil {
+	
+	
+	
 //POJO to JSON
 	public static String convertPOJOtoJSON(Object data) {
 		Gson gson = new Gson();
 		String gData = gson.toJson(data);
 		return gData;
 	}
+	
+	
 // properties file reader
 	public static String getqaProperties(String propertiesFileName, String key) throws IOException {
 		File myfile = new File(System.getProperty("user.dir") + "\\config\\" + propertiesFileName);
@@ -32,17 +38,29 @@ public class TestUtil {
 		return value;
 	}
 	
+	
+	
+	//partial  fake booking
+	public static PartialBookingPOJO getFakePartialBooking() {
+		Faker faker= new Faker();
+		PartialBookingPOJO paritialBooking= new PartialBookingPOJO(faker.name().firstName(), faker.name().lastName());
+		return paritialBooking;
+	}
 
 	//fake Create booking
-	public static CreateBooking getFakeCreateBooking() {
+	public static CreateBookingPOJO getFakeCreateBooking() {
 		Faker faker = new Faker();
-		Bookingdates bookingdates = new Bookingdates("18-09-2024", "21-09-2024");
+		BookingdatesPOJO bookingdates = new BookingdatesPOJO("18-10-2024", "21-10-2024");
 
-		CreateBooking createBooking = new CreateBooking(faker.name().firstName(), faker.name().lastName(), 10000, true,
-				 bookingdates,"Breakfast");
+		CreateBookingPOJO createBooking = new CreateBookingPOJO(faker.name().firstName(), faker.name().lastName(), 10000, true,
+				 bookingdates,"Lunch");
 		return createBooking;
 	}
-//fake ceate job 
+	
+	
+	
+	
+//fake create job 
 	public static CreateJobPOJO getFakeCreateJOb() {
 		Faker faker = new Faker();
 		ProblemsPOJO[] Problem = new ProblemsPOJO[3];

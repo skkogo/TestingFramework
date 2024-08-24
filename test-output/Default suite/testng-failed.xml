@@ -5,8 +5,7 @@
     <classes>
       <class name="com.api.tests.RB_GetBookingIDs">
         <methods>
-          <include name="test_Get_Booking_IDs_API"/>
-          <include name="setup"/>
+          <include name="Test_GetBookingAPI"/>
         </methods>
       </class> <!-- com.api.tests.RB_GetBookingIDs -->
     </classes>
