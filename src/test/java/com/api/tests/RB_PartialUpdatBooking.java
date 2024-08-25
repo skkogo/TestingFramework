@@ -18,9 +18,9 @@ public class RB_PartialUpdatBooking {
 Response response=		given()
 				.header(new Header("Content-Type", "application/json"))
 				.header(new Header("Accept", "application/json"))
-				.header(new Header("Cookie", "token=57af4f87ffd15b0"))
+				.header(new Header("Cookie", "token="+getTokenforBooking()))
 				.body(getFakePartialBooking())
-				.patch("booking/2496");
+				.patch("booking/2363");
 System.out.println(response.asPrettyString());
 	}
 

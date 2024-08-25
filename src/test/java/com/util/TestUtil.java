@@ -1,9 +1,19 @@
 package com.util;
 
+import static com.util.TestUtil.convertPOJOtoJSON;
+import static com.util.TestUtil.getFakeCreateBooking;
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.containsString;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.lessThan;
+import static org.hamcrest.Matchers.notNullValue;
+
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
+
+import org.hamcrest.Matchers;
 
 import com.github.javafaker.Faker;
 import com.google.gson.Gson;
@@ -14,10 +24,54 @@ import com.pojo_2.CustomerProductPOJO;
 import com.pojo_2.ProblemsPOJO;
 import com.pojo_3.BookingdatesPOJO;
 import com.pojo_3.CreateBookingPOJO;
+import com.pojo_3.CreateTokenPOJO;
 import com.pojo_3.PartialBookingPOJO;
+
+import io.restassured.http.Header;
 
 public class TestUtil {
 	
+	
+	
+	
+	
+	//get booking id
+	public static Number getBookingid() {
+		CreateBookingPOJO createBookingPOJO= null;
+		Number booking=		given()
+		.header(new Header("Content-Type", "application/json"))
+		.header(new Header("Accept", "application/json"))
+		.body(convertPOJOtoJSON( getFakeCreateBooking()))
+.when()
+		.log().all()
+		.post("booking")		
+.then()
+		
+		.extract().jsonPath().getInt("bookingid") ;
+		return booking;
+	}
+	
+	
+	
+	
+	
+	
+	//get token
+	public static String getTokenforBooking() {
+		CreateTokenPOJO createtoken=null;
+String token=   given()
+						.header(new Header("Content-Type", "application/json"))
+						.body(convertPOJOtoJSON( new CreateTokenPOJO("admin", "password123")))
+						.when()
+								.log().all()
+								.post("auth")
+						.then()
+							.extract().jsonPath().get("token");	
+							
+		return token;
+				
+					
+	}
 	
 	
 //POJO to JSON
@@ -26,6 +80,7 @@ public class TestUtil {
 		String gData = gson.toJson(data);
 		return gData;
 	}
+	
 	
 	
 // properties file reader
