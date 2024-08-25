@@ -1,4 +1,4 @@
-package com.api.testmetods;
+package com.api.tests;
 
 import static org.hamcrest.Matchers.*;
 import org.testng.annotations.BeforeMethod;
