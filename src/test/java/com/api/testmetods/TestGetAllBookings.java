@@ -1,3 +1,4 @@
+
 package com.api.testmetods;
 
 import static org.hamcrest.Matchers.*;
@@ -18,7 +19,7 @@ public void setup() throws IOException {
 	baseURI=TestUtil.getqaProperties("qa.properties", "BASE_URL");
 }
 	@Test(description = "testing for get booking API", groups = {"e2e","sanity","regression"})
-	public void Get_Booking_API() {
+	public void Get_Bookings_API() {
 		given()
 		.when()
 				.log().all()
