@@ -1,4 +1,4 @@
-package com.api.testmetods;
+package com.api.testmethods;
 
 import static org.hamcrest.Matchers.*;
 import org.testng.annotations.BeforeMethod;
@@ -18,7 +18,7 @@ public class TestGetBookingIDs {
 		baseURI=TestUtil.getqaProperties("qa.properties", "BASE_URL");
 	}
 @Test(description = "testing the get booking API",groups = {"e2e", "sanity","smoke"})
-public void Get_API_Booking() {
+public void Get_Booking_API() {
 	given()
 	.when()
 			.log().all()

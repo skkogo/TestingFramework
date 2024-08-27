@@ -4,8 +4,10 @@
 
 	<test name="API_Test">
 		<classes>
-			<class name="com.api.tests.TestCreateToken" />
-			<class name="com.api.tests.TestCreateBooking" />
+			<class name="com.api.testmethods.TestCreateToken" />
+			<class name="com.api.testmethods.TestCreateBooking" />
+			<class name="com.api.testmethods.TestGetBookingIDs" />
+			<class name="com.api.testmethods.TestGetAllBookings" />
 		</classes>
 	</test>
 </suite>

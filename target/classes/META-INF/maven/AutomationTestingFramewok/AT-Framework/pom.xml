@@ -6,6 +6,15 @@
 	<artifactId>AT-Framework</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<dependencies>
+	
+	<!-- https://mvnrepository.com/artifact/io.rest-assured/json-schema-validator -->
+<dependency>
+    <groupId>io.rest-assured</groupId>
+    <artifactId>json-schema-validator</artifactId>
+    <version>5.5.0</version>
+</dependency>
+
+
 
 		<dependency>
 			<groupId>org.testng</groupId>
@@ -15,17 +24,23 @@
 		</dependency>
 
 
+
 		<dependency>
 			<groupId>com.github.javafaker</groupId>
 			<artifactId>javafaker</artifactId>
 			<version>1.0.2</version>
 		</dependency>
 
+
+
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
 			<version>2.11.0</version>
 		</dependency>
+		
+		
+		
 
 		<dependency>
 			<groupId>io.rest-assured</groupId>

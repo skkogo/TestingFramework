@@ -1,4 +1,4 @@
-package com.api.testmetods;
+package com.api.testmethods;
 
 import static io.restassured.RestAssured.*;
 
