@@ -37,7 +37,7 @@ public class TestUtil {
 	
 	//get booking id
 	public static Number getBookingid() {
-		CreateBookingPOJO createBookingPOJO= null;
+	
 		Number booking=		given()
 		.header(new Header("Content-Type", "application/json"))
 		.header(new Header("Accept", "application/json"))
@@ -58,7 +58,7 @@ public class TestUtil {
 	
 	//get token
 	public static String getTokenforBooking() {
-		CreateTokenPOJO createtoken=null;
+		
 String token=   given()
 						.header(new Header("Content-Type", "application/json"))
 						.body(convertPOJOtoJSON( new CreateTokenPOJO("admin", "password123")))
