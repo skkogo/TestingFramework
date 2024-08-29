@@ -13,11 +13,7 @@ import static io.restassured.RestAssured.*;
 
 import java.io.IOException;
 
-public class TestPartialUpdateBooking {
-	@BeforeMethod(description = "setting up the baseURI for partial update booking with the help of propertis file")
-	public void setup () throws IOException {
-		baseURI=getqaProperties("qa.properties", "BASE_URL");
-	}
+public final class TestPartialUpdateBooking extends TestBaseSetup {
 
 	@Test(description = "testing the partial bookin API with given test method", groups = {"e2e", "sanity","smoke"})
 	public void Partial_Updat_Booking() {

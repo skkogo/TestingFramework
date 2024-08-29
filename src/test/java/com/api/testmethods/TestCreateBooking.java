@@ -10,12 +10,9 @@ import org.testng.annotations.Test;
 import io.restassured.http.Header;
 import static com.util.TestUtil.*;
 
-public class TestCreateBooking {
+public final class TestCreateBooking extends TestBaseSetup {
 	
-	@BeforeMethod(description ="setting up BASE URL for API using propertis file" )
-	public void setup() throws IOException {
-		baseURI= getqaProperties("qa.properties", "BASE_URL");
-	}
+	
 	
 	@Test(description = "verifying that booking has been created using this API", groups = {"smoke", "e2e","sanity"})
 public void Test_Create_Booking_API() {

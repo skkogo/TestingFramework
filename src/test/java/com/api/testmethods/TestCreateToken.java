@@ -16,12 +16,9 @@ import io.restassured.module.jsv.JsonSchemaValidator;
 
 import static com.util.TestUtil.*;
 
-public class TestCreateToken {
+public final class TestCreateToken extends TestBaseSetup {
 	File jsonfileSchema= new File(System.getProperty("user.dir")+"//src//test//resources//responseSchema//createTokenResponseSchema.json");
-	@BeforeMethod(description = "setting up the BaseURL for API using properties file")
-	public void setup() throws IOException {
-		baseURI= getqaProperties("qa.properties", "BASE_URL");
-	}
+	
 	
 	@Test(description = "verify that token has been created after run this API", groups = {"e2e", "smoke","sanity"})
 	public void test_create_token_API() {

@@ -12,11 +12,8 @@ import static io.restassured.RestAssured.*;
 
 import java.io.IOException;
 
-public class TestGetBookingIDs {
-	@BeforeMethod(description = "setting up the base URL for get Booking using properties file")
-	public void setup () throws IOException {
-		baseURI=TestUtil.getqaProperties("qa.properties", "BASE_URL");
-	}
+public final class TestGetBookingIDs extends TestBaseSetup {
+	
 @Test(description = "testing the get booking API",groups = {"e2e", "sanity","smoke"})
 public void Get_Booking_API() {
 	given()
