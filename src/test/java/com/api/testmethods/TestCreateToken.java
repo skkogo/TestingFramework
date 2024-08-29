@@ -2,6 +2,7 @@ package com.api.testmethods;
 
 import static io.restassured.RestAssured.*;
 
+import java.io.File;
 import java.io.IOException;
 
 import org.hamcrest.Matchers;
@@ -11,10 +12,12 @@ import org.testng.annotations.Test;
 import com.pojo_3.CreateTokenPOJO;
 
 import io.restassured.http.Header;
+import io.restassured.module.jsv.JsonSchemaValidator;
 
 import static com.util.TestUtil.*;
 
 public class TestCreateToken {
+	File jsonfileSchema= new File(System.getProperty("user.dir")+"//src//test//resources//responseSchema//createTokenResponseSchema.json");
 	@BeforeMethod(description = "setting up the BaseURL for API using properties file")
 	public void setup() throws IOException {
 		baseURI= getqaProperties("qa.properties", "BASE_URL");
@@ -29,7 +32,9 @@ public class TestCreateToken {
 			.log().all()
 			.post("auth")
 		.then()
+			.log().all()
 			.statusCode(200)
+			.body(JsonSchemaValidator.matchesJsonSchema(jsonfileSchema))
 			.body(Matchers.containsString("token"));
 		
 		

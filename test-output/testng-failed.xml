@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.api.testmethods.TestDeleteBooking">
+      <class name="com.api.testmethods.TestCreateToken">
         <methods>
+          <include name="test_create_token_API"/>
           <include name="setup"/>
-          <include name="Test_Delete_Booking"/>
         </methods>
-      </class> <!-- com.api.testmethods.TestDeleteBooking -->
+      </class> <!-- com.api.testmethods.TestCreateToken -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
