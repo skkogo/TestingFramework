@@ -9,6 +9,7 @@ public class Runner {
 
 		String creatToken = TestUtil.convertPOJOtoJSON(createToken);
 		System.out.println(creatToken);
+		
 	}
 
 }

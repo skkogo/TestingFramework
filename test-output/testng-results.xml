@@ -2,29 +2,29 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-08-30T00:50:57 IST" name="Default suite" finished-at="2024-08-30T00:51:05 IST" duration-ms="7485">
+  <suite started-at="2024-09-08T17:12:46 IST" name="Default suite" finished-at="2024-09-08T17:12:50 IST" duration-ms="4061">
     <groups>
-      <group name="smoke">
-        <method signature="TestPartialUpdateBooking.Partial_Updat_Booking()[pri:0, instance:com.api.testmethods.TestPartialUpdateBooking@cc43f62]" name="Partial_Updat_Booking" class="com.api.testmethods.TestPartialUpdateBooking"/>
-      </group> <!-- smoke -->
+      <group name="regression">
+        <method signature="TestGetAllBookings.Get_Bookings_API()[pri:0, instance:com.api.testmethods.TestGetAllBookings@cc43f62]" name="Get_Bookings_API" class="com.api.testmethods.TestGetAllBookings"/>
+      </group> <!-- regression -->
       <group name="sanity">
-        <method signature="TestPartialUpdateBooking.Partial_Updat_Booking()[pri:0, instance:com.api.testmethods.TestPartialUpdateBooking@cc43f62]" name="Partial_Updat_Booking" class="com.api.testmethods.TestPartialUpdateBooking"/>
+        <method signature="TestGetAllBookings.Get_Bookings_API()[pri:0, instance:com.api.testmethods.TestGetAllBookings@cc43f62]" name="Get_Bookings_API" class="com.api.testmethods.TestGetAllBookings"/>
       </group> <!-- sanity -->
       <group name="e2e">
-        <method signature="TestPartialUpdateBooking.Partial_Updat_Booking()[pri:0, instance:com.api.testmethods.TestPartialUpdateBooking@cc43f62]" name="Partial_Updat_Booking" class="com.api.testmethods.TestPartialUpdateBooking"/>
+        <method signature="TestGetAllBookings.Get_Bookings_API()[pri:0, instance:com.api.testmethods.TestGetAllBookings@cc43f62]" name="Get_Bookings_API" class="com.api.testmethods.TestGetAllBookings"/>
       </group> <!-- e2e -->
     </groups>
-    <test started-at="2024-08-30T00:50:57 IST" name="Default test" finished-at="2024-08-30T00:51:05 IST" duration-ms="7485">
-      <class name="com.api.testmethods.TestPartialUpdateBooking">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.api.testmethods.TestPartialUpdateBooking@cc43f62]" started-at="2024-08-30T00:50:57 IST" name="setup" description="setting up BASE URL for API using propertis file" finished-at="2024-08-30T00:50:58 IST" duration-ms="465" status="PASS">
+    <test started-at="2024-09-08T17:12:46 IST" name="Default test" finished-at="2024-09-08T17:12:50 IST" duration-ms="4061">
+      <class name="com.api.testmethods.TestGetAllBookings">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.api.testmethods.TestGetAllBookings@cc43f62]" started-at="2024-09-08T17:12:46 IST" name="setup" description="setting up BASE URL for API using propertis file" finished-at="2024-09-08T17:12:47 IST" duration-ms="649" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="Partial_Updat_Booking()[pri:0, instance:com.api.testmethods.TestPartialUpdateBooking@cc43f62]" started-at="2024-08-30T00:50:58 IST" name="Partial_Updat_Booking" description="testing the partial bookin API with given test method" finished-at="2024-08-30T00:51:05 IST" duration-ms="6968" status="PASS">
+        <test-method signature="Get_Bookings_API()[pri:0, instance:com.api.testmethods.TestGetAllBookings@cc43f62]" started-at="2024-09-08T17:12:47 IST" name="Get_Bookings_API" description="testing for get booking API" finished-at="2024-09-08T17:12:50 IST" duration-ms="3350" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Partial_Updat_Booking -->
-      </class> <!-- com.api.testmethods.TestPartialUpdateBooking -->
+        </test-method> <!-- Get_Bookings_API -->
+      </class> <!-- com.api.testmethods.TestGetAllBookings -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

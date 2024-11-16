@@ -118,20 +118,18 @@ String token=   given()
 //fake create job 
 	public static CreateJobPOJO getFakeCreateJOb() {
 		Faker faker = new Faker();
-		ProblemsPOJO[] Problem = new ProblemsPOJO[3];
-		Problem[0] = new ProblemsPOJO(1, "Overheating");
-		Problem[1] = new ProblemsPOJO(2, "Audio jack is not working");
-		Problem[2] = new ProblemsPOJO(3, "Screen is damaged");
-		CustomerProductPOJO Product = new CustomerProductPOJO(faker.numerify("######"), faker.numerify("######"),
-				faker.numerify("##############"), faker.numerify("##############"), faker.numerify("##############"), 5,
-				6);
-		CustomerAdressPOJO Adress = new CustomerAdressPOJO(faker.address().buildingNumber(),
+		ProblemsPOJO[] Problem = new ProblemsPOJO[1];
+		Problem[0] = new ProblemsPOJO(2, "Overheating");
+	
+		CustomerProductPOJO customer_product = new CustomerProductPOJO("2020-01-22T18:30:00.000Z", faker.numerify("1#############"),
+				faker.numerify("1#############"), faker.numerify("1#############"), "2020-01-22T18:30:00.000Z", 3,3);
+		CustomerAdressPOJO customer_address = new CustomerAdressPOJO(faker.address().buildingNumber(),
 				faker.address().secondaryAddress(), faker.address().streetAddress(), faker.address().streetAddress(),
 				faker.address().city(), faker.numerify("######"), faker.address().country(), faker.address().state());
 		CustomerPOJO Customer = new CustomerPOJO(faker.name().firstName(), faker.name().lastName(),
 				faker.numerify("##########"), faker.numerify("##########"), faker.internet().emailAddress(),
 				faker.internet().emailAddress());
-		CreateJobPOJO CreateJob = new CreateJobPOJO(65, 655, 556, 3455, Customer, Adress, Product, Problem);
+		CreateJobPOJO CreateJob = new CreateJobPOJO(0, 2, 2, 2, Customer, customer_address, customer_product, Problem);
 		return CreateJob;
 	}
 

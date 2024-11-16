@@ -10,8 +10,8 @@ public class Runner2 {
 
 		System.out.println(createBooking);
 		String createBookingJSON = TestUtil.convertPOJOtoJSON(createBooking);
-		System.out.println(createBookingJSON);
-
+		System.out.println(createBookingJSON); 
+ 
 	}
 
 }
